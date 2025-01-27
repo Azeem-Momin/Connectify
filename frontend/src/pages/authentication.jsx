@@ -23,7 +23,7 @@ const defaultTheme = createTheme();
 
 export default function Authentication() {
 
-    
+
 
     const [username, setUsername] = React.useState();
     const [password, setPassword] = React.useState();
@@ -41,13 +41,13 @@ export default function Authentication() {
 
     let handleAuth = async () => {
         try {
-            if (formState === 0) {
+            if (formState === 0) {  
 
                 let result = await handleLogin(username, password)
 
 
             }
-            if (formState === 1) {
+            if (formState === 1) {  
                 let result = await handleRegister(name, username, password);
                 console.log(result);
                 setUsername("");
@@ -76,7 +76,7 @@ export default function Authentication() {
                     sm={4}
                     md={7}
                     sx={{
-                        backgroundImage: 'url(https://source.unsplash.com/random?wallpapers)',
+                        backgroundImage: 'url(https://t4.ftcdn.net/jpg/01/19/11/55/360_F_119115529_mEnw3lGpLdlDkfLgRcVSbFRuVl6sMDty.jpg)',
                         backgroundRepeat: 'no-repeat',
                         backgroundColor: (t) =>
                             t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
