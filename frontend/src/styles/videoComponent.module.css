@@ -72,7 +72,7 @@
 .meetUserVideo {
     position: relative;
     height: auto;
-    max-height: 100vh;
+    max-height: 60vh;
     background: rgb(1, 4, 48);
 }
 
