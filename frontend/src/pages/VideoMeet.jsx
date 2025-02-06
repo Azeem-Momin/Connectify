@@ -466,7 +466,8 @@ export default function VideoMeetComponent() {
                 </div> :
 
 
-                <div className={styles.meetVideoContainer}>
+                    // video related stuff
+                <div className='container'>
 
                     {showModal ? <div className={styles.chatRoom}>
 
@@ -525,7 +526,7 @@ export default function VideoMeetComponent() {
 
                     <video className={styles.meetUserVideo} ref={localVideoref} autoPlay muted></video>
 
-                    <div className={styles.conferenceView}>
+                    <div  className={styles.conferenceView}>
                         {videos.map((video) => (
                             <div key={video.socketId}>
                                 <video

@@ -53,35 +53,23 @@ export default function History() {
                 <HomeIcon />
             </IconButton >
             {
-                (meetings.length !== 0) ? meetings.map((e, i) => {
+                (meetings.length !== 0) ? meetings.map((e) => {
                     return (
+                        <Card key={e.meetingCode} variant="outlined">  {/* Use a unique property here */}
+                            <CardContent>
+                                <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                                    Code: {e.meetingCode}
+                                </Typography>
 
-                        <>
-
-
-                            <Card key={i} variant="outlined">
-
-
-                                <CardContent>
-                                    <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                                        Code: {e.meetingCode}
-                                    </Typography>
-
-                                    <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                                        Date: {formatDate(e.date)}
-                                    </Typography>
-
-                                </CardContent>
-
-
-                            </Card>
-
-
-                        </>
+                                <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                                    Date: {formatDate(e.date)}
+                                </Typography>
+                            </CardContent>
+                        </Card>
                     )
                 }) : <></>
-
             }
+
 
         </div>
     )

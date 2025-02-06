@@ -25,9 +25,9 @@ export default function Authentication() {
 
 
 
-    const [username, setUsername] = React.useState();
-    const [password, setPassword] = React.useState();
-    const [name, setName] = React.useState();
+    const [username, setUsername] = React.useState('');
+    const [password, setPassword] = React.useState('');
+    const [name, setName] = React.useState('');
     const [error, setError] = React.useState();
     const [message, setMessage] = React.useState();
 

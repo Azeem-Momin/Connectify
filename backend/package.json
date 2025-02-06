@@ -9,7 +9,7 @@
     "start": "nodemon src/app.js",
     "prod": "pm2 src/app.js"
   },
-  "author": "apnacollege",
+  "author": "azeem",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",

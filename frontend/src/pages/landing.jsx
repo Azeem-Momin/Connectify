@@ -12,7 +12,7 @@ export default function LandingPage() {
                     
                 <nav className="navbar navbar-expand-lg nav-bg-color sticky-top">
                     <div className="container-fluid">
-                        <a className="navbar-brand" href="#">
+                        <a className="navbar-brand" href="/">
                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqf-Kqyd8dSvhhufDguf9CsTZStGVsoSQ5dg&s" alt="Logo" width="30" height="24" className="d-inline-block align-text-top" />
                             Connectify
                         </a>
@@ -43,7 +43,7 @@ export default function LandingPage() {
 
             <div className="p-5">
                     <div>
-                        <h1><span style={{ color: "rgb(13, 202, 240)" }}>Connect</span> with your loved Ones</h1>
+                        <h1><span className='connectStyle'>Connect</span> with your loved Ones</h1>
 
                         <p>Cover a distance by Apna Video Call</p>
                         <div role='button'>
@@ -52,7 +52,7 @@ export default function LandingPage() {
                     </div>
                     <div>
 
-                        <img src="/mobile.png" alt="" />
+                        <img src="/mobile.png"  alt="" />
 
                     </div>
                 </div>
