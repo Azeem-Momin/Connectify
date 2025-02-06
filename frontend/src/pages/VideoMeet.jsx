@@ -439,7 +439,7 @@ export default function VideoMeetComponent() {
         // this.setState({ message: "", sender: username })
     }
 
-    
+
     let connect = () => {
         setAskForUsername(false);
         getMedia();
@@ -447,27 +447,42 @@ export default function VideoMeetComponent() {
 
 
     return (
-        <div>
+        <div className="container-fluid">
 
             {askForUsername === true ?
 
-                <div>
-
-
-                    <h2>Enter into Lobby </h2>
-                    <TextField id="outlined-basic" label="Username" value={username} onChange={e => setUsername(e.target.value)} variant="outlined" />
-                    <Button variant="contained" onClick={connect}>Connect</Button>
-
-
-                    <div>
-                        <video ref={localVideoref} autoPlay muted></video>
+                <div className="d-flex flex-column align-items-center justify-content-center vh-100">
+                    <h2>Enter into Lobby</h2>
+                    
+                    <div className="input-group m-3 w-50">
+                        <TextField
+                            id="outlined-basic"
+                            label="Username"
+                            value={username}
+                            onChange={e => setUsername(e.target.value)}
+                            variant="outlined"
+                            className="form-control"
+                        InputProps={{ style: { height: '50px'} }} 
+                        />
+                        <div className="input-group-append">
+                            <Button
+                                variant="contained"
+                                onClick={connect}
+                                className="btn btn-primary"
+                                style={{ height: '50px', marginLeft: '10px' }}
+                            >
+                                Connect
+                            </Button>
+                        </div>
                     </div>
-
+                    <div className="mt-4">
+                        <video ref={localVideoref} className="w-100" autoPlay muted></video>
+                    </div>
                 </div> :
 
 
-                    // video related stuff
-                <div className='container'>
+                // video related stuff
+                <div className='container-fluid'>
 
                     {showModal ? <div className={styles.chatRoom}>
 
@@ -505,7 +520,7 @@ export default function VideoMeetComponent() {
                             {(video === true) ? <VideocamIcon /> : <VideocamOffIcon />}
                         </IconButton>
                         <IconButton onClick={handleEndCall} style={{ color: "red" }}>
-                            <CallEndIcon  />
+                            <CallEndIcon />
                         </IconButton>
                         <IconButton onClick={handleAudio} style={{ color: "white" }}>
                             {audio === true ? <MicIcon /> : <MicOffIcon />}
@@ -524,9 +539,9 @@ export default function VideoMeetComponent() {
                     </div>
 
 
-                    <video className={styles.meetUserVideo} ref={localVideoref} autoPlay muted></video>
+                    <video className={`${styles.meetUserVideo} w-100`} ref={localVideoref} autoPlay muted></video>
 
-                    <div  className={styles.conferenceView}>
+                    <div className={styles.conferenceView}>
                         {videos.map((video) => (
                             <div key={video.socketId}>
                                 <video
@@ -538,6 +553,7 @@ export default function VideoMeetComponent() {
                                         }
                                     }}
                                     autoPlay
+                                    className="w-100"
                                 >
                                 </video>
                             </div>

@@ -4,14 +4,14 @@
     background: rgb(1, 4, 48);
 }
 
-.meetUserVideo {
+/* .meetUserVideo {
     position: absolute;
     bottom: 10vh;
     height: 13em;
     width: auto;
-    /* left: 1rem; */
+    left: 1rem;
     border-radius: 20px;
-}
+} */
 
 .buttonContainers {
     background-color: black;
@@ -47,6 +47,35 @@
     border-radius: 20px;
 }
 
+/* .chatRoom {
+    position: absolute;
+    height: 90vh;
+    right: 0;
+    background: black;
+    border-radius: 10px;
+    width: 30vw;
+    padding-inline: 20px;
+} */
+
+/* .chatContainer {
+    position: relative;
+    height: 100%;
+} */
+
+
+/* .chattingArea {
+    position: absolute;
+    bottom: 0;
+} */
+
+
+.meetUserVideo {
+    position: relative;
+    height: auto;
+    max-height: 100vh;
+    background: rgb(1, 4, 48);
+}
+
 .chatRoom {
     position: absolute;
     height: 90vh;
@@ -62,8 +91,8 @@
     height: 100%;
 }
 
-
 .chattingArea {
     position: absolute;
     bottom: 0;
+    width: 100%;
 }
