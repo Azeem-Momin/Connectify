@@ -447,7 +447,7 @@ export default function VideoMeetComponent() {
 
 
     return (
-        <div style={{ backgroundColor: 'rgb(1, 4, 48)' }} className='vh-100 '>
+        <div style={{ backgroundColor: 'rgb(1, 4, 48)' }} className='vh-500 '>
 
             {askForUsername === true ?
 
@@ -506,8 +506,8 @@ export default function VideoMeetComponent() {
                             </div>
 
                             <div className={styles.chattingArea}>
-                                <TextField value={message} onChange={(e) => setMessage(e.target.value)} id="outlined-basic" label="Enter Your chat" variant="outlined" />
-                                <Button variant='contained' onClick={sendMessage}>Send</Button>
+                                <TextField style={{ height: '50px' }} value={message} onChange={(e) => setMessage(e.target.value)} id="outlined-basic" label="Enter Your chat" variant="outlined" />
+                                <Button variant='contained' onClick={sendMessage} className='mx-2' style={{ height: '55px' }}>Send</Button>
                             </div>
 
 
@@ -539,13 +539,10 @@ export default function VideoMeetComponent() {
                     </div>
 
                     <div className="video-container position-relative">
-                        <video className={`${styles.meetUserVideo} w-100`} ref={localVideoref} autoPlay muted></video>
-                        <div className="username-overlay position-absolute text-white">
-                            {/* {username} (Host) */}
-                        </div>
+                        <video className={`${styles.meetUserVideo} w-100`} ref={localVideoref} autoPlay muted>
+                        </video>
+                        
                     </div>
-
-
 
 
                     <div className={styles.conferenceView}>
@@ -568,6 +565,7 @@ export default function VideoMeetComponent() {
                         ))}
 
                     </div>
+
 
                 </div>
 

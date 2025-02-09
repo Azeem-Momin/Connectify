@@ -4,83 +4,81 @@
     background: rgb(1, 4, 48);
 }
 
-/* .meetUserVideo {
-    position: absolute;
-    bottom: 10vh;
-    height: 13em;
-    width: auto;
-    left: 1rem;
-    border-radius: 20px;
-} */
+
 
 .buttonContainers {
     background-color: black;
-    position: absolute;
+    position: fixed; /* Changed from absolute to fixed */
     width: 100vw;
     bottom: 0;
     text-align: center;
     margin-left: 0px;
+    z-index: 1000; /* Ensure it appears above other elements */
 }
 
 .buttonContainers svg {
     font-size: 2.5rem;
 }
 
-.conferenceView { 
-    display: flex;
-    top: 10px;
-    padding: 10px;
+
+
+
+.conferenceView {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 10px;
+    padding: 10px;
+    padding-bottom: 60px; /* Add padding to avoid overlap with buttonContainers */
+    overflow-y: auto; /* Allow scrolling if content overflows */
+    height: calc(100vh - 60px); /* Adjust height to exclude buttonContainers */
 }
 
-.conferenceView  video {
-    background-color: black; 
+@media (min-width: 768px) {
+    .conferenceView {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 
-    /* width: auto; */
+@media (min-width: 1024px) {
+    .conferenceView {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.conferenceView video {
+    background-color: black;
     height: 13em;
-    /* min-width: 20vw; */
-    /* border-radius: 65px ; */
-
-    /* bottom: 10vh; */
-    /* height: 10em;
-    width: auto; */
-    /* left: 1rem; */
     border-radius: 20px;
 }
-
-/* .chatRoom {
-    position: absolute;
-    height: 90vh;
-    right: 0;
-    background: black;
-    border-radius: 10px;
-    width: 30vw;
-    padding-inline: 20px;
-} */
-
-/* .chatContainer {
-    position: relative;
-    height: 100%;
-} */
-
-
-/* .chattingArea {
-    position: absolute;
-    bottom: 0;
-} */
 
 
 
 
 .chatRoom {
     position: absolute;
-    height: 70vh;
+    margin: 10px;
+    margin-left: 20px;
+    padding-bottom: 1rem;
+    height: 88vh;
     right: 0;
     background: bisque;
     border-radius: 10px;
     width: 30vw;
     padding-inline: 20px;
     z-index: 10;
+}
+
+@media (max-width: 900px) {
+    .chatRoom {
+        margin: 0;
+        padding-bottom: 1rem;
+
+        width: 100vw;
+        height: 92vh;
+        top: 0;
+        right: 0;
+        border-radius: 0;
+    }
 }
 
 .chatContainer {
@@ -92,9 +90,7 @@
     position: absolute;
     bottom: 0;
     width: 100%;
-   
 }
-
 
 
 .meetUserVideo {
