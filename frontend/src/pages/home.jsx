@@ -25,7 +25,7 @@ function HomeComponent() {
             <nav className="navbar navbar-expand-lg nav-bg-color sticky-top mt-0">
                 <div className="container-fluid">
                     <a className="navbar-brand" href="/">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqf-Kqyd8dSvhhufDguf9CsTZStGVsoSQ5dg&s" alt="Logo" width="30" height="24" className="d-inline-block align-text-top" />
+                        <img src="/public/icon.png" alt="Logo" width="30" height="24" className="d-inline-block align-text-top" />
                         Connectify
                     </a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -74,31 +74,6 @@ function HomeComponent() {
                     </div>
                 </div>
                 <div className='col-md-6'>
-                    {/* <img srcSet='/logo3.png' alt="" /> */}
-
-                    {/* <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel-inner text-center">
-                    <div className="carousel-inner">
-                        <div className="carousel-item active">
-                            <img src="/homeImage.jpeg" className="d-block  mx-auto rounded-circle" alt="homeImage" />
-                        </div>
-                        <div className="carousel-item">
-                            <img src="/screenShare.jpeg" className="d-block  mx-auto rounded-circle" alt="homeImage" />
-                        </div>
-                        <div className="carousel-item">
-                            <img src="/homeImage3.jpeg" className="d-block  mx-auto rounded-circle" alt="homeImage" />
-                        </div>
-                    </div>
-                    <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span className="visually-hidden">Previous</span>
-                    </button>
-                    <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                        <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span className="visually-hidden">Next</span>
-                    </button>
-                </div> */}
-
-
                     <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">
                         <div className="carousel-inner">
                             <div className="carousel-item active">

@@ -9,11 +9,11 @@ export default function LandingPage() {
         <>
             <div className='landingPageContainer'>
 
-                    
+
                 <nav className="navbar navbar-expand-lg nav-bg-color sticky-top">
                     <div className="container-fluid">
                         <a className="navbar-brand" href="/">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqf-Kqyd8dSvhhufDguf9CsTZStGVsoSQ5dg&s" alt="Logo" width="30" height="24" className="d-inline-block align-text-top" />
+                            <img src="/public/icon.png" alt="Logo" width="30" height="24" className="d-inline-block align-text-top" />
                             Connectify
                         </a>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,45 +41,18 @@ export default function LandingPage() {
 
             </div>
 
-            <div className="p-5">
-                    <div>
-                        <h1><span className='connectStyle'>Connect</span> with your loved Ones</h1>
-
-                        <p>Cover a distance by Apna Video Call</p>
-                        <div role='button'>
-                            <Link to={"/auth"}>Get Started</Link>
-                        </div>
-                    </div>
-                    <div>
-
-                        <img src="/mobile.png"  alt="" />
-
+            <div className="p-5 d-flex flex-column flex-lg-row align-items-center">
+                <div className="text-center text-lg-start mb-4 mb-lg-0">
+                    <h1><span className='connectStyle'>Connect</span> with your loved Ones</h1>
+                    <p>Cover a distance by Apna Video Call</p>
+                    <div role='button'>
+                        <Link to={"/auth"}>Get Started</Link>
                     </div>
                 </div>
-
-
-                <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
-                    <div className="carousel-inner">
-                        <div className="carousel-item active">
-                            <img src="/homeImage.jpeg" className="d-block w-100" alt="homeImage" />
-                        </div>
-                        <div className="carousel-item">
-                            <img src="/screenShare.jpeg" className="d-block w-100" alt="homeImage" />
-                        </div>
-                        <div className="carousel-item">
-                            <img src="/homeImage3.jpeg" className="d-block w-100" alt="homeImage" />
-                        </div>
-                    </div>
-                    <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span className="visually-hidden">Previous</span>
-                    </button>
-                    <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                        <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span className="visually-hidden">Next</span>
-                    </button>
+                <div className="text-center">
+                    <img src="/mobile.png" alt="" className="img-fluid responsive-image" />
                 </div>
+            </div>
         </>
-
     )
 }
