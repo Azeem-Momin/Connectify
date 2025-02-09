@@ -40,7 +40,7 @@ export default function VideoMeetComponent() {
 
     let [screen, setScreen] = useState();
 
-    let [showModal, setModal] = useState(true);
+    let [showModal, setModal] = useState(false);
 
     let [screenAvailable, setScreenAvailable] = useState();
 
@@ -447,12 +447,12 @@ export default function VideoMeetComponent() {
 
 
     return (
-        <div style={{ backgroundColor: 'rgb(1, 4, 48)' }} className='vh-500 '>
+        <div style={{ backgroundColor: 'rgb(100, 108, 255)' }} className='vh-500 '>
 
             {askForUsername === true ?
 
                 <div className="d-flex flex-column align-items-center justify-content-center vh-100">
-                    <h2 className='text-dark'>Enter into Lobby</h2>
+                    <h2 style={{color:"rgb(255, 255, 200)"}}>Enter into Lobby</h2>
 
                     <div className="input-group m-3 w-50">
                         <TextField
