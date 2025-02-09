@@ -447,13 +447,13 @@ export default function VideoMeetComponent() {
 
 
     return (
-        <div className="container-fluid">
+        <div style={{ backgroundColor: 'rgb(1, 4, 48)' }} className='vh-100 '>
 
             {askForUsername === true ?
 
                 <div className="d-flex flex-column align-items-center justify-content-center vh-100">
-                    <h2>Enter into Lobby</h2>
-                    
+                    <h2 className='text-dark'>Enter into Lobby</h2>
+
                     <div className="input-group m-3 w-50">
                         <TextField
                             id="outlined-basic"
@@ -462,7 +462,7 @@ export default function VideoMeetComponent() {
                             onChange={e => setUsername(e.target.value)}
                             variant="outlined"
                             className="form-control"
-                        InputProps={{ style: { height: '50px'} }} 
+                            InputProps={{ style: { height: '50px' } }}
                         />
                         <div className="input-group-append">
                             <Button
@@ -482,7 +482,7 @@ export default function VideoMeetComponent() {
 
 
                 // video related stuff
-                <div className='container-fluid'>
+                <div className=''>
 
                     {showModal ? <div className={styles.chatRoom}>
 
@@ -538,8 +538,15 @@ export default function VideoMeetComponent() {
 
                     </div>
 
+                    <div className="video-container position-relative">
+                        <video className={`${styles.meetUserVideo} w-100`} ref={localVideoref} autoPlay muted></video>
+                        <div className="username-overlay position-absolute text-white">
+                            {/* {username} (Host) */}
+                        </div>
+                    </div>
 
-                    <video className={`${styles.meetUserVideo} w-100`} ref={localVideoref} autoPlay muted></video>
+
+
 
                     <div className={styles.conferenceView}>
                         {videos.map((video) => (

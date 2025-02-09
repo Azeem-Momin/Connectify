@@ -19,6 +19,7 @@
     width: 100vw;
     bottom: 0;
     text-align: center;
+    margin-left: 0px;
 }
 
 .buttonContainers svg {
@@ -69,21 +70,17 @@
 } */
 
 
-.meetUserVideo {
-    position: relative;
-    height: auto;
-    max-height: 60vh;
-    background: rgb(1, 4, 48);
-}
+
 
 .chatRoom {
     position: absolute;
-    height: 90vh;
+    height: 70vh;
     right: 0;
-    background: black;
+    background: bisque;
     border-radius: 10px;
     width: 30vw;
     padding-inline: 20px;
+    z-index: 10;
 }
 
 .chatContainer {
@@ -95,4 +92,28 @@
     position: absolute;
     bottom: 0;
     width: 100%;
+   
+}
+
+
+
+.meetUserVideo {
+    padding: 1rem;
+    position: relative;
+    height: 40vh; /* Change this value to set the desired height */
+    max-height: 90vh;
+    /* background: white; */
+}
+
+.video-container {
+    position: relative;
+}
+
+.username-overlay {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    border-radius: 5px;
 }
