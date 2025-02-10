@@ -436,13 +436,14 @@ export default function VideoMeetComponent() {
 
 
 
-    let sendMessage = () => {
-        console.log(socketRef.current);
-        socketRef.current.emit('chat-message', message, username)
-        setMessage("");
+    // let sendMessage = () => {
+    //     console.log(socketRef.current);
+    //     socketRef.current.emit('chat-message', message, username)
+    //     setMessage("");
 
-        // this.setState({ message: "", sender: username })
-    }
+    //     // this.setState({ message: "", sender: username })
+    // }
+
 
 
     let connect = () => {
