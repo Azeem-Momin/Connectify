@@ -1,6 +1,0 @@
-# Exclude node_modules in both frontend and backend
-frontend/node_modules/
-backend/node_modules/
-
-.env
-.gitignore
