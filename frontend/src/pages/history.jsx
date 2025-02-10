@@ -39,8 +39,16 @@ export default function History() {
         const day = date.getDate().toString().padStart(2, "0");
         const month = (date.getMonth() + 1).toString().padStart(2, "0")
         const year = date.getFullYear();
+        const hours = date.getHours().toString().padStart(2, "0");
+        const minutes = date.getMinutes().toString().padStart(2, "0");
+        const seconds = date.getSeconds().toString().padStart(2, "0");
 
-        return `${day}/${month}/${year}`
+        // return `${day}/${month}/${year}`
+        // return `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
+        return {
+            date: `${day}/${month}/${year}`,
+            time: `${hours}:${minutes}:${seconds}`
+        };
 
     }
 
@@ -53,16 +61,19 @@ export default function History() {
                 <HomeIcon />
             </IconButton >
             {
-                (meetings.length !== 0) ? meetings.map((e) => {
+                (meetings.length !== 0) ? meetings.map((e, index) => {
                     return (
-                        <Card key={e.meetingCode} variant="outlined">  {/* Use a unique property here */}
+                        <Card key={`${e.meetingCode}-${index}`} variant="outlined">  {/* Use a unique property here */}
                             <CardContent>
                                 <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
                                     Code: {e.meetingCode}
                                 </Typography>
 
+                                <Typography sx={{ mb: 0 }} color="text.secondary">
+                                    Date: {formatDate(e.date).date}
+                                </Typography>
                                 <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                                    Date: {formatDate(e.date)}
+                                    Time: {formatDate(e.date).time}
                                 </Typography>
                             </CardContent>
                         </Card>
