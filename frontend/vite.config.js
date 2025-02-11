@@ -1,10 +1,18 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
   build: {
-    outDir: 'dist', // Ensure the output folder is 'dist'
+    chunkSizeWarningLimit: 1000, // Increase to 1000 kB
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          reactVendor: ["react", "react-dom"],
+          firebase: ["firebase/app", "firebase/auth"],
+          axios: ["axios"],
+        },
+      },
+    },
   },
-})
+});
