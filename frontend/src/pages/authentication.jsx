@@ -49,7 +49,7 @@ export default function Authentication() {
             }
             if (formState === 1) {  
                 let result = await handleRegister(name, username, password);
-                console.log(result);
+                // console.log(result);
                 setUsername("");
                 setMessage(result);
                 setOpen(true);
@@ -59,7 +59,7 @@ export default function Authentication() {
             }
         } catch (err) {
 
-            console.log(err);
+            // console.log(err);
             let message = (err.response.data.message);
             setError(message);
         }

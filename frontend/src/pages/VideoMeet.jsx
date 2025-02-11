@@ -70,7 +70,7 @@ export default function VideoMeetComponent() {
 
     // })
     useEffect(() => {
-        console.log("HELLO")
+        // console.log("HELLO")
         getPermissions();
     }, {});
     
@@ -91,19 +91,19 @@ export default function VideoMeetComponent() {
             const videoPermission = await navigator.mediaDevices.getUserMedia({ video: true });
             if (videoPermission) {
                 setVideoAvailable(true);
-                console.log('Video permission granted');
+                // console.log('Video permission granted');
             } else {
                 setVideoAvailable(false);
-                console.log('Video permission denied');
+                // console.log('Video permission denied');
             }
 
             const audioPermission = await navigator.mediaDevices.getUserMedia({ audio: true });
             if (audioPermission) {
                 setAudioAvailable(true);
-                console.log('Audio permission granted');
+                // console.log('Audio permission granted');
             } else {
                 setAudioAvailable(false);
-                console.log('Audio permission denied');
+                // console.log('Audio permission denied');
             }
 
             if (navigator.mediaDevices.getDisplayMedia) {
@@ -122,14 +122,14 @@ export default function VideoMeetComponent() {
                 }
             }
         } catch (error) {
-            console.log(error);
+            // console.log(error);
         }
     };
 
     useEffect(() => {
         if (video !== undefined && audio !== undefined) {
             getUserMedia();
-            console.log("SET STATE HAS ", video, audio);
+            // console.log("SET STATE HAS ", video, audio);
 
         }
 
@@ -148,7 +148,9 @@ export default function VideoMeetComponent() {
     let getUserMediaSuccess = (stream) => {
         try {
             window.localStream.getTracks().forEach(track => track.stop())
-        } catch (e) { console.log(e) }
+        } catch (e) { 
+            // console.log(e)
+         }
 
         window.localStream = stream
         localVideoref.current.srcObject = stream
@@ -159,12 +161,14 @@ export default function VideoMeetComponent() {
             connections[id].addStream(window.localStream)
 
             connections[id].createOffer().then((description) => {
-                console.log(description)
+                // console.log(description)
                 connections[id].setLocalDescription(description)
                     .then(() => {
                         socketRef.current.emit('signal', id, JSON.stringify({ 'sdp': connections[id].localDescription }))
                     })
-                    .catch(e => console.log(e))
+                    .catch(e => 
+                        console.log(e)
+                    )
             })
         }
 
@@ -214,10 +218,12 @@ export default function VideoMeetComponent() {
 
 
     let getDislayMediaSuccess = (stream) => {
-        console.log("HERE")
+        // console.log("HERE")
         try {
             window.localStream.getTracks().forEach(track => track.stop())
-        } catch (e) { console.log(e) }
+        } catch (e) { 
+            // console.log(e)
+         }
 
         window.localStream = stream
         localVideoref.current.srcObject = stream
@@ -306,13 +312,13 @@ export default function VideoMeetComponent() {
 
                     // Wait for their video stream
                     connections[socketListId].onaddstream = (event) => {
-                        console.log("BEFORE:", videoRef.current);
-                        console.log("FINDING ID: ", socketListId);
+                        // console.log("BEFORE:", videoRef.current);
+                        // console.log("FINDING ID: ", socketListId);
 
                         let videoExists = videoRef.current.find(video => video.socketId === socketListId);
 
                         if (videoExists) {
-                            console.log("FOUND EXISTING");
+                            // console.log("FOUND EXISTING");
 
                             // Update the stream of the existing video
                             setVideos(videos => {
@@ -324,7 +330,7 @@ export default function VideoMeetComponent() {
                             });
                         } else {
                             // Create a new video
-                            console.log("CREATING NEW");
+                            // console.log("CREATING NEW");
                             let newVideo = {
                                 socketId: socketListId,
                                 stream: event.stream,
@@ -436,13 +442,13 @@ export default function VideoMeetComponent() {
 
 
 
-    // let sendMessage = () => {
-    //     console.log(socketRef.current);
-    //     socketRef.current.emit('chat-message', message, username)
-    //     setMessage("");
+    let sendMessage = () => {
+        console.log(socketRef.current);
+        socketRef.current.emit('chat-message', message, username)
+        setMessage("");
 
-    //     // this.setState({ message: "", sender: username })
-    // }
+        // this.setState({ message: "", sender: username })
+    }
 
 
 
@@ -499,7 +505,7 @@ export default function VideoMeetComponent() {
 
                                 {messages.length !== 0 ? messages.map((item, index) => {
 
-                                    console.log(messages)
+                                    // console.log(messages)
                                     return (
                                         <div style={{ marginBottom: "20px" }} key={index}>
                                             <p style={{ fontWeight: "bold" }}>{item.sender}</p>
