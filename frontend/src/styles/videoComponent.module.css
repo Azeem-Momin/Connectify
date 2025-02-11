@@ -64,17 +64,17 @@
     background: bisque;
     border-radius: 10px;
     width: 30vw;
-    padding-inline: 20px;
+    /* padding-inline: 20px; */
     z-index: 10;
 }
 
 @media (max-width: 940px) {
     .chatRoom {
         margin: 0;
-        padding-bottom: 1rem;
+        /* padding-bottom: 1rem; */
 
         width: 100vw;
-        height: 93vh;
+        height: 94vh;
         top: 0;
         right: 0;
         border-radius: 0;
