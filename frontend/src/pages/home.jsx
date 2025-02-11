@@ -25,7 +25,7 @@ function HomeComponent() {
             <nav className="navbar navbar-expand-lg nav-bg-color sticky-top mt-0">
                 <div className="container-fluid">
                     <a className="navbar-brand" href="/">
-                        <img src="/public/icon.png" alt="Logo" width="30" height="24" className="d-inline-block align-text-top" />
+                        <img src="/icon.png" alt="Logo" width="30" height="24" className="d-inline-block align-text-top" />
                         Connectify
                     </a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
