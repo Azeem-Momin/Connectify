@@ -72,7 +72,7 @@ export default function VideoMeetComponent() {
     useEffect(() => {
         // console.log("HELLO")
         getPermissions();
-    }, {});
+    }, []);
     
 
     let getDislayMedia = () => {

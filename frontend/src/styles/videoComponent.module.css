@@ -30,7 +30,7 @@
     padding: 10px;
     padding-bottom: 60px; /* Add padding to avoid overlap with buttonContainers */
     overflow-y: auto; /* Allow scrolling if content overflows */
-    height: calc(100vh - 60px); /* Adjust height to exclude buttonContainers */
+    height: calc(60vh - 60px); /* Adjust height to exclude buttonContainers */
 }
 
 @media (min-width: 768px) {
@@ -68,13 +68,13 @@
     z-index: 10;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 940px) {
     .chatRoom {
         margin: 0;
         padding-bottom: 1rem;
 
         width: 100vw;
-        height: 92vh;
+        height: 95vh;
         top: 0;
         right: 0;
         border-radius: 0;
@@ -88,7 +88,7 @@
 
 .chattingArea {
     position: absolute;
-    bottom: 0;
+    bottom: 15px;
     width: 100%;
 }
 
