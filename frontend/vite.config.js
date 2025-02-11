@@ -9,7 +9,6 @@ export default defineConfig({
       output: {
         manualChunks: {
           reactVendor: ["react", "react-dom"],
-          firebase: ["firebase/app", "firebase/auth"],
           axios: ["axios"],
         },
       },
